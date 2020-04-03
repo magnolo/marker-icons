@@ -1,6 +1,7 @@
 :host{
     &::ng-deep{
         svg{
+            display:flex;
             width: var(--size); 
             height: var(--size);
 
