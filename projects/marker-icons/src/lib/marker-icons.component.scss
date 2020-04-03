@@ -1,0 +1,12 @@
+:host{
+    &::ng-deep{
+        svg{
+            width: var(--size); 
+            height: var(--size);
+
+            path:not([fill='none']){
+                fill: var(--fill-color);
+            }
+        }
+    } 
+}
