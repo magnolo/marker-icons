@@ -5,10 +5,11 @@ import {
   Inject,
   Input,
   Optional,
-  HostBinding
+  HostBinding,
+  PLATFORM_ID
 } from '@angular/core';
 import { MarkerIconsService} from './marker-icons.service';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -44,6 +45,7 @@ export class MarkerIconsComponent {
     private element: ElementRef,
     private sanitizer: DomSanitizer,
     private markerIconsService: MarkerIconsService,
+    @Inject(PLATFORM_ID) private platformId,
     @Optional() @Inject(DOCUMENT) private document: any
   ) {}
 
@@ -56,9 +58,11 @@ export class MarkerIconsComponent {
     );
   }
 
-  async render(iconName) {
-    const svgData = await this.markerIconsService.getIcon(iconName);
-    this.svgIcon = this.svgElementFromString(svgData);
-    this.element.nativeElement.appendChild(this.svgIcon);
+  render(iconName) {
+    if (isPlatformBrowser(this.platformId)) {
+      const svgData = this.markerIconsService.getIcon(iconName);
+      this.svgIcon = this.svgElementFromString(svgData);
+      this.element.nativeElement.appendChild(this.svgIcon);
+    }
   }
 }

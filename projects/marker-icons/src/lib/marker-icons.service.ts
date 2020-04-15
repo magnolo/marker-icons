@@ -9,12 +9,22 @@ export class MarkerIconsService {
   constructor() {}
 
   public getIcon(iconName: string) {
+    if (!iconName) {
+      console.warn(
+        `You have to provide a name for the icon. Couldnt find one.`
+      );
+      return {
+        name: '',
+        data: null,
+      };
+    }
+
     // console.log();
     const name = 'marker' + this.capitalize(this.toCamelCase(iconName));
   
     if (!Markers[name]) {
       console.warn(
-        `We could not find the marker Icon with the name ${iconName} by ${name}, did you add it to the Icon registry?`
+        `We could not find the marker Icon with the name ${iconName} by ${name}.`
       );
       return {
         name: '',
