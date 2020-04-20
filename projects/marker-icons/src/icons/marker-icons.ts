@@ -502,6 +502,10 @@ export const markerRailLight: MarkerIcon = {
   name: 'rail_light',
   data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path fill="none" d="M0 0h19v19H0z"/><path d="M7.5 2c-.5 0-.5.5-.5.5v1a.499.499 0 101 0V3h1v2H8S6 5 6 7v3c0 3 3 3 3 3h1s3 0 3-3V7c0-2-2-2-2-2h-1V3h1v.5a.499.499 0 101 0v-1c0-.5-.5-.5-.5-.5h-4zm2 4l2.045.773L12 8.5c.132.5-.5.5-.5.5h-4s-.632 0-.5-.5l.455-1.727L9.5 6zm0 4a.5.5 0 110 1 .5.5 0 010-1zm-3.375 4L5 17h1.5l.375-1h5.25l.375 1H14l-1.125-3h-1.5l.375 1h-4.5l.375-1h-1.5z"/></svg>`
 };
+export const markerRailMetro: MarkerIcon = {
+  name: 'rail_metro',
+  data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path fill="none" d="M0 0h19v19H0z"/><path d="M7.5 2s-.75 0-1 1L5 8.5V12c0 1 1 1 1 1h7s1 0 1-1V8.5L12.5 3c-.273-1-1-1-1-1h-4zm1 1.5h2s.536 0 .75 1L12 8c.215 1.002-1 1-1 1H8s-1.215.002-1-1l.75-3.5c.214-1 .75-1 .75-1zM7 10a1 1 0 110 2 1 1 0 010-2zm1.75 0h1.5a.25.25 0 110 .5h-1.5a.25.25 0 110-.5zM12 10a1 1 0 110 2 1 1 0 010-2zm-5.875 4L5 17h1.5l.375-1h5.25l.375 1H14l-1.125-3h-1.5l.375 1h-4.5l.375-1h-1.5z"/></svg>`
+};
 export const markerRail: MarkerIcon = {
   name: 'rail',
   data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><path fill="none" d="M0 0h19v19H0z"/><path d="M5 3a1 1 0 00-1 1v8a1 1 0 001 1h9a1 1 0 001-1V4a1 1 0 00-1-1H5zm2.75.5h3.51a.25.25 0 110 .5H7.75a.25.25 0 110-.5zM5.5 5H9v4H5.5a.5.5 0 01-.5-.5v-3a.5.5 0 01.5-.5zM10 5h3.5a.5.5 0 01.5.5v3a.5.5 0 01-.5.5H10V5zm-3 5a1 1 0 110 2 1 1 0 010-2zm5 0a1 1 0 110 2 1 1 0 010-2zm.445 3.994a.504.504 0 00-.425.676l.17.33H6.81l.13-.27a.5.5 0 00-.91-.41l-1 2a.487.487 0 00-.03.18.5.5 0 00.5.5.49.49 0 00.43-.26v-.05H6l.31-.69h6.38l.31.69v.05a.49.49 0 00.43.26.5.5 0 00.5-.5.49.49 0 000-.24l-1-2a.5.5 0 00-.485-.266z"/></svg>`
@@ -875,6 +879,7 @@ export type markerIcon =
   | 'post'
   | 'prison'
   | 'rail_light'
+  | 'rail_metro'
   | 'rail'
   | 'ranger_station'
   | 'recycling'
