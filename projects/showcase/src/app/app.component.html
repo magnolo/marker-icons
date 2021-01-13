@@ -1,12 +1,28 @@
-
 <div class="flex column center fullwidth fullheight">
-  
-  <div class="flex-main center">
-    <marker-icons name="aerialway" [size]="size" [color]="color"></marker-icons>
+
+  <div
+    class="flex-main grid"
+    [ngStyle]="{'grid-template-columns': 'repeat(auto-fill,'+size+'px )', 'grid-template-rows': 'repeat(auto-fill,'+size+'px )'}">
+
+    <marker-icons
+      [style.width.px]="size"
+      [style.height.px]="size"
+      *ngFor="let marker of allMarkers"
+      [name]="marker"
+      [size]="size"
+      [color]="color"></marker-icons>
   </div>
-  <div>
-    <input type="color" [(ngModel)]="color">
-    <input type="range" min="1" max="100" [(ngModel)]="size" class="slider" id="myRange">
-  
+  <div class="controls">
+    <input
+      type="color"
+      [(ngModel)]="color">
+    <input
+      type="range"
+      min="1"
+      max="100"
+      [(ngModel)]="size"
+      class="slider"
+      id="myRange">
+
   </div>
 </div>
