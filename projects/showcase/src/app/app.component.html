@@ -1,0 +1,12 @@
+
+<div class="flex column center fullwidth fullheight">
+  
+  <div class="flex-main center">
+    <marker-icons name="aerialway" [size]="size" [color]="color"></marker-icons>
+  </div>
+  <div>
+    <input type="color" [(ngModel)]="color">
+    <input type="range" min="1" max="100" [(ngModel)]="size" class="slider" id="myRange">
+  
+  </div>
+</div>
