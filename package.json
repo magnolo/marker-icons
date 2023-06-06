@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:prod": "ng build --prod",
+    "build": "ng build marker-icons",
+    "build:prod": "ng build marker-icons",
     "build:full": "yarn generate-icons && yarn build:prod",
     "test": "ng test",
     "lint": "ng lint",
