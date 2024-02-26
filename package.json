@@ -5,18 +5,18 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build marker-icons",
-    "build:prod": "ng build marker-icons",
+    "build:prod": "ng build marker-icons -c production",
     "build:full": "yarn generate-icons && yarn build:prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "rename-svgs": "node rename.js projects/marker-icons/icons/svg-icons '-15' ''",
     "generate-icons": "svg-to-ts",
-    "analyze": "ng build marker-icons-showcase --prod --stats-json && webpack-bundle-analyzer ./dist/marker-icons-showcase/stats-es2015.json"
+    "analyze": "ng build marker-icons-showcase --stats-json && webpack-bundle-analyzer ./dist/marker-icons-showcase/stats-es2015.json"
   },
   "svg-to-ts": {
     "srcFiles": [
-      "./projects/marker-icons/icons/**/*.svg"
+      "./projects/marker-icons/icons/svg-icons-new/**/*.svg"
     ],
     "outputDirectory": "./projects/marker-icons/src/icons",
     "interfaceName": "MarkerIcon",
