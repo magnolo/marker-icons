@@ -1,53 +1,45 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Inject,
-  Input,
-  Optional,
-  HostBinding,
-  PLATFORM_ID
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, HostBinding, PLATFORM_ID, inject, input, linkedSignal, effect } from '@angular/core';
 import { MarkerIconsService} from './marker-icons.service';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'marker-icons',
-  template: `
+    selector: 'marker-icons',
+    template: `
     <ng-content></ng-content>
   `,
-  styleUrls: ['./marker-icons.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./marker-icons.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkerIconsComponent {
+  private element = inject(ElementRef);
+  private sanitizer = inject(DomSanitizer);
+  private markerIconsService = inject(MarkerIconsService);
+  private platformId = inject(PLATFORM_ID);
+  private document = inject(DOCUMENT, { optional: true });
+
   private svgIcon: SVGElement;
 
-  @Input()
-  set name(iconName) {
+  name = input.required<string>();
+
+
+  private onNameChange = effect(() => {
+    const iconName = this.name();
     if (this.svgIcon) {
       this.element.nativeElement.removeChild(this.svgIcon);
     }
-    this.render(iconName);
-  }
+    this.render(iconName)
+  })
 
-  @Input() color = '#ff0000';
-  @Input() size = 50;
+  readonly color = input('#ff0000');
+  readonly size = input(50);
 
   @HostBinding('attr.style')
   public get style() {
     return this.sanitizer.bypassSecurityTrustStyle(
-      `--fill-color: ${this.color}; --size: ${this.size}px`
+      `--fill-color: ${this.color()}; --size: ${this.size()}px`
     );
   }
-
-  constructor(
-    private element: ElementRef,
-    private sanitizer: DomSanitizer,
-    private markerIconsService: MarkerIconsService,
-    @Inject(PLATFORM_ID) private platformId,
-    @Optional() @Inject(DOCUMENT) private document: any
-  ) {}
 
   private svgElementFromString(svgContent: string): SVGElement {
     const div = this.document.createElement('DIV');

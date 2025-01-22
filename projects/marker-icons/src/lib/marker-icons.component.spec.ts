@@ -8,8 +8,8 @@ describe('MarkerIconsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MarkerIconsComponent ]
-    })
+    imports: [MarkerIconsComponent]
+})
     .compileComponents();
   }));
 
