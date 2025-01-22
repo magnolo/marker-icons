@@ -3,14 +3,15 @@
   <div
     class="flex-main grid"
     [ngStyle]="{'grid-template-columns': 'repeat(auto-fill,'+size+'px )', 'grid-template-rows': 'repeat(auto-fill,'+size+'px )'}">
+  <!-- @for(marker of allMarkers; track marker){ -->
 
     <marker-icons
-      [style.width.px]="size"
-      [style.height.px]="size"
-      *ngFor="let marker of allMarkers"
-      [name]="marker"
-      [size]="size"
-      [color]="color"></marker-icons>
+    [style.width.px]="size"
+    [style.height.px]="size"
+    [name]="markerName()"
+    [size]="size"
+    [color]="color"></marker-icons>
+  <!-- } -->
   </div>
   <div class="controls">
     <input
@@ -23,6 +24,8 @@
       [(ngModel)]="size"
       class="slider"
       id="myRange">
-
+    <button (click)="markerName.set('aerialway')"> Aerial</button>
+    <button (click)="markerName.set('baseball')">Baseball</button>
+    <button (click)="markerName.set('star')">Star</button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { enableProdMode } from "@angular/core";
+import { enableProdMode, provideExperimentalZonelessChangeDetection } from "@angular/core";
 
 import { bootstrapApplication } from "@angular/platform-browser";
 import { environment } from "./environments/environment";
@@ -10,5 +10,5 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: []
+  providers: [provideExperimentalZonelessChangeDetection()]
 }).catch(err => console.error(err));
