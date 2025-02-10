@@ -32,19 +32,21 @@
         "generate-icons": {
           "builder": "@angular-extensions/svg-icons-builder:svg-icons-constants-builder",
           "options": {
-              "conversionType": "constants",
-              "fileName": "marker-icons",
-              "generateType": false,
-              "generateTypeObject": false,
-              "generateCompleteIconSet": true,
-              "srcFiles": ["./projects/marker-icons/icons/svg-icons-new/**/*.svg"],
-             "outputDirectory": "./projects/marker-icons/src/icons",
-             "interfaceName": "MarkerIcon",
-              "typeName": "MarkerIcon",
-              "prefix": "marker",
-              "svgoConfig": {
-                "plugins": ["cleanupAttrs"]
-              }
+            "conversionType": "constants",
+            "fileName": "marker-icons",
+            "generateType": true,
+            "generateTypeObject": false,
+            "generateCompleteIconSet": true,
+            "srcFiles": [
+              "./projects/marker-icons/icons/svg-icons-new/**/*.svg"
+            ],
+            "outputDirectory": "./projects/marker-icons/src/icons",
+            "interfaceName": "MarkerIcon",
+            "typeName": "markerIcon",
+            "prefix": "marker",
+            "svgoConfig": {
+              "plugins": ["cleanupAttrs"]
+            }
           }
         }
       }
