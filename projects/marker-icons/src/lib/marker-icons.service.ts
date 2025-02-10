@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import * as Markers from './../icons/';
+import * as Markers from './../icons/marker-icons';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import * as Markers from './../icons/';
 export class MarkerIconsService {
   constructor() {}
 
-  public async getIcon(iconName: string) {
+  public getIcon(iconName: string) {
     if (!iconName) {
       console.warn(
         `You have to provide a name for the icon. Couldnt find one.`
@@ -21,10 +21,8 @@ export class MarkerIconsService {
 
     // console.log();
     const name = 'marker' + this.capitalize(this.toCamelCase(iconName));
-
-    const icon = await(import(`../icons/marker-icons/marker-${iconName}.icon.mjs`));
-
-    if (!icon) {
+  
+    if (!Markers[name]) {
       console.warn(
         `We could not find the marker Icon with the name ${iconName} by ${name}.`
       );
@@ -36,7 +34,7 @@ export class MarkerIconsService {
     // return this.registry.get(iconName);
     // const icon = await import('../../icons');
 
-    return icon[name].data;
+    return Markers[name].data;
   }
 
   private toCamelCase(name) {
