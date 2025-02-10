@@ -30,28 +30,21 @@
           }
         },
         "generate-icons": {
-          "builder": "@angular-extensions/svg-icons-builder:svg-icons-files-builder",
+          "builder": "@angular-extensions/svg-icons-builder:svg-icons-constants-builder",
           "options": {
-            "conversionType": "files",
-            "srcFiles": ["./projects/marker-icons/icons/svg-icons-new/**/*.svg"],
-            "outputDirectory": "./projects/marker-icons/src/icons",
-            "interfaceName": "MarkerIcon",
-            "generateType": false,
-            "generateTypeObject": false,
-            "generateCompleteIconSet": false,
-            "exportCompleteIconSet": false,
-            "fileName": "marker-icons",
-            "iconsFolderName": "marker-icons",
-            "objectName": "marker-icons",
-            "typeName": "markerIcon",
-            "prefix": "marker",
-            "modelFileName": "marker-icons",
-            "barrelFileName": "index",
-            "svgoConfig": {
-              "plugins": ["cleanupAttrs"]
-            },
-            "compileSources": true,
-            "compilationOutput": "ESM"
+              "conversionType": "constants",
+              "fileName": "marker-icons",
+              "generateType": false,
+              "generateTypeObject": false,
+              "generateCompleteIconSet": true,
+              "srcFiles": ["./projects/marker-icons/icons/svg-icons-new/**/*.svg"],
+             "outputDirectory": "./projects/marker-icons/src/icons",
+             "interfaceName": "MarkerIcon",
+              "typeName": "MarkerIcon",
+              "prefix": "marker",
+              "svgoConfig": {
+                "plugins": ["cleanupAttrs"]
+              }
           }
         }
       }
@@ -134,7 +127,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/showcase/src/test.ts",
-            "polyfills":[],
+            "polyfills": [],
             "tsConfig": "projects/showcase/tsconfig.spec.json",
             "karmaConfig": "projects/showcase/karma.conf.js",
             "assets": [

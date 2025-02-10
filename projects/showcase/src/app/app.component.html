@@ -3,7 +3,7 @@
   <div
     class="flex-main grid"
     [ngStyle]="{'grid-template-columns': 'repeat(auto-fill,'+size+'px )', 'grid-template-rows': 'repeat(auto-fill,'+size+'px )'}">
-  @for(marker of allMarkers; track marker){
+  @for(marker of allMarkers; track $index){
 
     <marker-icons
     [style.width.px]="size"
