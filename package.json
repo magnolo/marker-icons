@@ -10,6 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:showcase": "ng build showcase",
     "rename-svgs": "node rename.js projects/marker-icons/icons/svg-icons '-15' ''",
     "generate-icons": "ng run marker-icons:generate-icons",
     "analyze": "ng build marker-icons-showcase --stats-json && webpack-bundle-analyzer ./dist/marker-icons-showcase/stats-es2015.json"

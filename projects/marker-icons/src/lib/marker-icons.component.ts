@@ -70,7 +70,6 @@ export class MarkerIconsComponent {
 
   render(icon) {
     if (isPlatformBrowser(this.platformId)) {
-      console.log({icon});
       this.svgIcon = this.svgElementFromString(icon);
       this.element.nativeElement.appendChild(this.svgIcon);
     }
