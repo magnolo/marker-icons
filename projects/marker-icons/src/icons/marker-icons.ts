@@ -951,6 +951,34 @@ export const markerPlaceOfWorship: {
   name: 'place_of_worship',
   data: `<?xml version="1.0" encoding="UTF-8"?><svg version="1.1" id="place-of-worship" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path id="path9064" d="M7.5,0l-2,2v2h4V2	L7.5,0z M5.5,4.5L4,6h7L9.5,4.5H5.5z M2,6.5c-0.5523,0-1,0.4477-1,1V13h2V7.5C3,6.9477,2.5523,6.5,2,6.5z M4,6.5V13h7V6.5H4z M13,6.5c-0.5523,0-1,0.4477-1,1V13h2V7.5C14,6.9477,13.5523,6.5,13,6.5z"/></svg>`
 };
+export const markerPlaybackFirst: {
+  name: 'playback_first';
+  data: string;
+} = {
+  name: 'playback_first',
+  data: `<?xml version="1.0" encoding="utf-8"?><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M13.20938 2.09314C13.36179 1.98427 13.56226 1.96972 13.72879 2.05542C13.89533 2.14112 14 2.31271 14 2.5V12.5C14 12.6873 13.89533 12.8589 13.72879 12.9446C13.56226 13.0303 13.36179 13.0157 13.20938 12.9069L6.20938 7.90687C6.07798 7.81301 6 7.66148 6 7.5C6 7.33853 6.07798 7.18699 6.20938 7.09314L13.20938 2.09314Z"/><path d="M2 13H1V2H2V13Z"/></svg>`
+};
+export const markerPlaybackLast: {
+  name: 'playback_last';
+  data: string;
+} = {
+  name: 'playback_last',
+  data: `<?xml version="1.0" encoding="utf-8"?><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M1.79062 2.09314C1.63821 1.98427 1.43774 1.96972 1.27121 2.05542C1.10467 2.14112 1 2.31271 1 2.5V12.5C1 12.6873 1.10467 12.8589 1.27121 12.9446C1.43774 13.0303 1.63821 13.0157 1.79062 12.9069L8.79062 7.90687C8.92202 7.81301 9 7.66148 9 7.5C9 7.33853 8.92202 7.18699 8.79062 7.09314L1.79062 2.09314Z"/><path d="M13 13H14V2H13V13Z"/></svg>`
+};
+export const markerPlaybackNext: {
+  name: 'playback_next';
+  data: string;
+} = {
+  name: 'playback_next',
+  data: `<?xml version="1.0" encoding="UTF-8"?><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M11.625,7 l-7.5,-5.625 A0.625,0.625,0,0,0,3.125,1.875 V13.125 a0.625,0.625,0,0,0,0.34375,0.55625 a0.625,0.625,0,0,0,0.625,-0.05625 l7.5,-5.625 a0.625,0.625,0,0,0,0,-1.0 Z"/></svg>`
+};
+export const markerPlaybackPrev: {
+  name: 'playback_prev';
+  data: string;
+} = {
+  name: 'playback_prev',
+  data: `<?xml version="1.0" encoding="utf-8"?><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><g transform="translate(15,0) scale(-1,1)"><path d="M11.625,7 l-7.5,-5.625 A0.625,0.625,0,0,0,3.125,1.875 V13.125 a0.625,0.625,0,0,0,0.34375,0.55625 a0.625,0.625,0,0,0,0.625,-0.05625 l7.5,-5.625 a0.625,0.625,0,0,0,0,-1.0 Z"/></g></svg>`
+};
 export const markerPlayground: {
   name: 'playground';
   data: string;
@@ -1641,6 +1669,10 @@ export type markerIcon =
   | 'picnic_site'
   | 'pitch'
   | 'place_of_worship'
+  | 'playback_first'
+  | 'playback_last'
+  | 'playback_next'
+  | 'playback_prev'
   | 'playground'
   | 'police_jp'
   | 'police'
