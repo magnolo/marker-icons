@@ -18,5 +18,6 @@ export class AppComponent {
   
   constructor(){
     this.allMarkers = Object.values(Markers).map((item) => item.name);
+    console.log(this.allMarkers, Markers)
   }
 }
